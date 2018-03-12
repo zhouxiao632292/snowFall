@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>h5+css3实现雪花纷飞  以及 动画下拉</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+   
+    header{
+        width: 100%;
+        height:315px;
+        background: url(images/header-bg.png) 0 0;
+    }
+    section{
+        position: relative;
+        width:85%;
+        height:100%;
+        margin: 0 auto;
+        background:url(images/con-bg.png) repeat-x 0px 204px,url(images/snow-bg.png) 0px 0px;
+        animation: snowFall 15s linear infinite;
+    }
+    .tree{
+        position: absolute;
+        top:170px;
+        left:141px;
+        width: 112px;
+        height:137px;
+        background: url("images/tree.png");
+        animation: showFall 2s linear;
+    }
+    .tree:nth-child(2){
+        top: 139px;
+        left: 276px;
+        animation: showFall 1.8s linear;
+    }
+    .tree:nth-child(3){
+        top: 164px;
+        left: 395px;
+        animation: showFall 1.7s linear;
+    }
+    .tree:nth-child(4){
+        top: 180px;
+        left: 882px;
+        animation: showFall 1s linear;
+    }
+    .tree:nth-child(5){
+        top: 147px;
+        left: 707px;
+        animation: showFall 1.5s linear;
+    }
+    .tree:nth-child(6){
+        top: 147px;
+        left: 549px;
+        animation: showFall 1.2s linear;
+    }
+    .ice{
+        position: absolute;
+        top: 212px;
+        left: 475px;
+        width:115px;
+        height:103px;
+        background: url("images/ice.png");
+        animation: showFall 1s linear;
+    }
+     @keyframes snowFall {
+        from{
+            background-position-y: 204px,0px;}
+        to{
+            background-position-y: 204px,880px;
+        }
+    }
+    @keyframes showFall {
+        from{
+            transform:translate(0,-300px);}
+        to{
+            transform:translate(0,0px);
+        }
+    }
+</style>
+<body>
+   <header>
+        <section>
+            <div class="tree"></div>
+            <div class="tree"></div>
+            <div class="tree"></div>
+            <div class="tree"></div>
+            <div class="tree"></div>
+            <div class="tree"></div>
+            <div class="ice"></div>
+        </section>
+   </header>
+</body>
+</html>
